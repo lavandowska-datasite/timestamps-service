@@ -1,0 +1,12 @@
+plugins {
+    id 'com.mrll.javelin.datasite-library'
+}
+
+dependencies {
+    classpathOnly(platform("com.mrll.javelin:datasite-platform-dependencies:${datasitePlatformVersion}"))
+
+    // Only non-platform dependencies need versions, platform dependencies will use versions from the platform BOM.
+    api 'com.mrll.javelin:ds-spring-data-mongo'
+
+    api project(":timestamps-common")
+}

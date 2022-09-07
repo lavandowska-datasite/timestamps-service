@@ -1,0 +1,11 @@
+plugins {
+    id 'com.mrll.javelin.datasite-base' version '3.1.16'
+}
+
+// Base plugin doesn't default these for multi-module builds.
+version = (version != 'unspecified') ? version : "${LocalDate.now().year}.0"
+ext.artifactoryRepoKey = 'ds1-services' // The repo for searching to determine the next version to publish
+
+allprojects {
+    group = 'com.mrll.javelin'
+}

@@ -1,0 +1,32 @@
+plugins {
+    id 'com.mrll.javelin.datasite-service'
+}
+
+dependencies {
+    // Import platform BOMs, only datasite should be versioned.
+    implementation platform("com.mrll.javelin:datasite-platform-dependencies:${datasitePlatformVersion}") {
+    }
+
+    // Modules : kafka will bring in the others, but I like being explicit
+    implementation project(":timestamps-common")
+    implementation project(":timestamps-kafka")
+    implementation project(":timestamps-mongo")
+
+    // Web
+    implementation('org.springframework.cloud:spring-cloud-config-client')
+    implementation('org.springframework.cloud:spring-cloud-starter-bootstrap')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Datasite
+    implementation('com.mrll.javelin:ds1-common-metrics')
+
+    // Tests
+    testImplementation 'com.mrll.javelin:ds1-common-test'
+    testImplementation platform('org.junit:junit-bom')
+    compileOnly('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.junit.jupiter:junit-jupiter-params')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+    testImplementation 'org.codehaus.groovy:groovy-all'
+    testImplementation 'org.spockframework:spock-core'
+}

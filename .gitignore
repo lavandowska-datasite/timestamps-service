@@ -1,0 +1,21 @@
+# Build files
+.gradle/
+build/
+classes/
+target/
+*.class
+*.log
+*.DS_Store
+
+# IDE files
+.classpath
+.project
+.settings/
+.vscode
+*.iws
+*.iml
+*.ipr
+.idea/
+bin/
+out/
+http-client.private.env.json

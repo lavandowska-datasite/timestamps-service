@@ -1,0 +1,11 @@
+plugins {
+    id 'com.mrll.javelin.datasite-library'
+}
+
+dependencies {
+    // Import platform BOMs, only datasite should be versioned.
+    classpathOnly(platform("com.mrll.javelin:datasite-platform-dependencies:${datasitePlatformVersion}"))
+
+    api 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

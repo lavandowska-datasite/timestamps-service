@@ -1,0 +1,19 @@
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://merrillcorp.jfrog.io/merrillcorp/ds1"
+            credentials {
+                username = "${artifactory_user}"
+                password = "${artifactory_password}"
+            }
+        }
+    }
+}
+
+rootProject.name = "timestamps-service"
+
+include 'timestamps-client'
+include 'timestamps-common'
+include 'timestamps-kafka'
+include 'timestamps-mongo'
+include 'timestamps-service'

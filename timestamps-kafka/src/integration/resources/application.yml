@@ -1,0 +1,8 @@
+spring:
+  mongodb:
+    embedded:
+      version: 4.4.11
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers:}
+
+logging.level.com.datasite.timestamps.kafka: TRACE

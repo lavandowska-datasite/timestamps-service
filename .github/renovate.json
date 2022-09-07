@@ -1,0 +1,6 @@
+{
+    "extends": [
+        "github>MerrillCorporation/renovate-config:spring-service",
+        "github>MerrillCorporation/renovate-config:squad-default"
+    ]
+}
